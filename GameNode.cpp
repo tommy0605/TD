@@ -1,0 +1,64 @@
+#include "stdafx.h"
+#include "GameNode.h"
+
+void GameNode::Init()
+{	
+	SetBackBuffer();
+	TIMEMANAGER->Init();
+	SOUNDMANAGER->Init();
+	SCENEMANAGER->Init();
+}
+
+void GameNode::Update()
+{
+	TIMEMANAGER->Update(60.0f);
+	InvalidateRect(hWnd, NULL, false);	
+}
+
+void GameNode::Render(HDC hdc)
+{
+}
+
+void GameNode::Release()
+{
+	
+}
+
+void GameNode::SetBackBuffer()
+{
+	backBuffer = new BackBuffer;
+	backBuffer->Init(WINWIDTH, WINHEIGHT);
+}
+
+LRESULT GameNode::MainProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	PAINTSTRUCT ps;
+	HDC hdc;
+
+	switch (message)
+	{
+	case WM_CREATE:
+		this->Init();		
+		break;	
+	case WM_PAINT:
+	{
+		hdc = BeginPaint(hWnd, &ps);
+		this->Render(hdc);
+		EndPaint(hWnd, &ps);
+	}
+	break;
+	case WM_MOUSEMOVE:
+	{
+		mousePos.x = LOWORD(lParam);
+		mousePos.y = HIWORD(lParam);
+	}
+	break;
+	case  WM_DESTROY:
+		PostQuitMessage(0);
+		break;
+	default:
+		break;
+	}
+
+	return (DefWindowProc(hWnd, message, wParam, lParam));
+}

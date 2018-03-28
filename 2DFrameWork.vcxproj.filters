@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="2DFrameWork">
+      <UniqueIdentifier>{13ee519b-4ff9-47fe-abd3-c955a18eccca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\Image">
+      <UniqueIdentifier>{307688a9-26df-4eb2-92f7-7fd7e9c345c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\GameNode">
+      <UniqueIdentifier>{7b3d6eb0-1269-4e0a-8006-5e22a52b6e83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame">
+      <UniqueIdentifier>{c72c40fa-956a-4f06-b089-0473059a0531}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\BackBuffer">
+      <UniqueIdentifier>{3345a5f2-7b39-48e5-821d-7da96f36350a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\KeyManager">
+      <UniqueIdentifier>{4158a5c1-7480-45b8-9d9f-0fd4dfcd1e15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\SingletonBase">
+      <UniqueIdentifier>{0afbbbe2-402e-4dd0-961e-8acadb960a2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\ImageManager">
+      <UniqueIdentifier>{a139247c-e338-4a1e-9cd0-479649967329}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\Timer">
+      <UniqueIdentifier>{e8b38cb4-3a95-4b1e-be86-8feb88dfb6e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\TimeManager">
+      <UniqueIdentifier>{b8fa0eb9-6f54-4932-b0af-b5440740d1a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\Animation">
+      <UniqueIdentifier>{c2885263-0526-43b4-bab0-d0bf10303e61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\Effect">
+      <UniqueIdentifier>{fc2adefe-fafc-450a-95bf-d0d1173f5c5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\EffectManager">
+      <UniqueIdentifier>{ad5c65fd-e60b-444a-9d36-5b52ec3965a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\SoundManager">
+      <UniqueIdentifier>{6ed1a895-cf9c-4ef3-880e-2af3d296dc33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\SceneManager">
+      <UniqueIdentifier>{b57a1fcc-6ffa-42ac-b582-c07b647ba1ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\GameScene">
+      <UniqueIdentifier>{30f39b17-1d12-48a3-a875-39e392a414a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\StartScene">
+      <UniqueIdentifier>{cc0ac7af-8435-4101-90c9-6ed95ed519ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\ImageFont">
+      <UniqueIdentifier>{4a708044-dbcb-4db0-8408-12056042f9f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\TextData">
+      <UniqueIdentifier>{3445508e-b999-4e08-82a3-8c1fa18076a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\Button">
+      <UniqueIdentifier>{a347f790-02cb-4d03-8ec1-6652925fa9a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\GameScene\Tile">
+      <UniqueIdentifier>{1bafa66b-56e6-4b95-8b8a-8326313eee83}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="2DFrameWork.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>2DFrameWork\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="GameNode.h">
+      <Filter>2DFrameWork\GameNode</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame.h">
+      <Filter>MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="BackBuffer.h">
+      <Filter>2DFrameWork\BackBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyManager.h">
+      <Filter>2DFrameWork\KeyManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SingletonBase.h">
+      <Filter>2DFrameWork\SingletonBase</Filter>
+    </ClInclude>
+    <ClInclude Include="commonFunction.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageManager.h">
+      <Filter>2DFrameWork\ImageManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>2DFrameWork\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager.h">
+      <Filter>2DFrameWork\TimeManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>2DFrameWork\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Effect.h">
+      <Filter>2DFrameWork\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectManager.h">
+      <Filter>2DFrameWork\EffectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>2DFrameWork\SoundManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>2DFrameWork\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>MainGame\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="StartScene.h">
+      <Filter>MainGame\StartScene</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageFont.h">
+      <Filter>2DFrameWork\ImageFont</Filter>
+    </ClInclude>
+    <ClInclude Include="TextData.h">
+      <Filter>2DFrameWork\TextData</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>2DFrameWork\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>MainGame\GameScene\Tile</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2DFrameWork.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>2DFrameWork\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="GameNode.cpp">
+      <Filter>2DFrameWork\GameNode</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="BackBuffer.cpp">
+      <Filter>2DFrameWork\BackBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyManager.cpp">
+      <Filter>2DFrameWork\KeyManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageManager.cpp">
+      <Filter>2DFrameWork\ImageManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>2DFrameWork\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>2DFrameWork\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Effect.cpp">
+      <Filter>2DFrameWork\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectManager.cpp">
+      <Filter>2DFrameWork\EffectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager.cpp">
+      <Filter>2DFrameWork\TimeManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>2DFrameWork\SoundManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>2DFrameWork\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>MainGame\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="StartScene.cpp">
+      <Filter>MainGame\StartScene</Filter>
+    </ClCompile>
+    <ClCompile Include="TextData.cpp">
+      <Filter>2DFrameWork\TextData</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageFont.cpp">
+      <Filter>2DFrameWork\ImageFont</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>2DFrameWork\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>MainGame\GameScene\Tile</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="2DFrameWork.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="2DFrameWork.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
