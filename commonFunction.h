@@ -91,10 +91,10 @@ inline float GetDistance(float startX, float startY, float endX, float endY)
 	return sqrtf(x*x + y * y);
 }
 
-inline float GetDistance(POINT pos1, POINT pos2)
+inline float GetDistance(POINT a1, POINT a2)
 {
-	float x = pos2.x - pos1.x;
-	float y = pos2.y - pos1.y;
+	float x = a1.x - a2.x;
+	float y = a2.y - a2.y;
 
 	return sqrtf(x*x + y * y);
 }
@@ -140,4 +140,15 @@ inline DIRECTION GetCollisionReposition(RECT* player, RECT* obj)
 	}
 
 	return NONE;
+}
+
+inline float GetAngle(POINT pos1, POINT pos2)
+{
+	double dx = pos1.x - pos2.x;
+	double dy = pos1.y - pos2.y;
+
+	float angle = -(atan2(dy, dx));
+	angle -= PI;
+
+	return angle;
 }

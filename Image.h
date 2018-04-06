@@ -26,6 +26,7 @@ public:
 	Image();
 	void Init(const TCHAR* _fileName, int _width, int _height,
 		bool _isTrans = false, COLORREF _transColor = false);
+	//TODO:충돌처리용 이닛도 할것(이미지 픽셀 충돌용 처리)
 	void Init(const TCHAR* _fileName, int _width, int _height,
 		int _maxFrameX, int _maxFrameY, bool _isTrans = false,
 		COLORREF _transColor = false);

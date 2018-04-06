@@ -70,11 +70,44 @@
     <Filter Include="2DFrameWork\TextData">
       <UniqueIdentifier>{3445508e-b999-4e08-82a3-8c1fa18076a5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MainGame\MapTool">
+      <UniqueIdentifier>{0dec1f8a-6ec2-43d5-b579-c41bdb06dea4}</UniqueIdentifier>
+    </Filter>
     <Filter Include="2DFrameWork\Button">
       <UniqueIdentifier>{a347f790-02cb-4d03-8ec1-6652925fa9a6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="MainGame\GameScene\Tile">
-      <UniqueIdentifier>{1bafa66b-56e6-4b95-8b8a-8326313eee83}</UniqueIdentifier>
+    <Filter Include="MainGame\Building">
+      <UniqueIdentifier>{2c219b99-67ca-42ba-9bd2-abbb8d905528}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\Powerup">
+      <UniqueIdentifier>{6fdd9d8e-c3d5-4000-837d-1659677ef4ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\Research">
+      <UniqueIdentifier>{7dcd2f53-4075-48f9-82b8-3b42b2ef8918}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\Unit">
+      <UniqueIdentifier>{6a5d8dff-88e1-4c08-87ba-bc5eb1791e19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\Unit\Ally">
+      <UniqueIdentifier>{efbc8b96-617c-4473-bf1d-06d75daf8825}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\Building\Tower">
+      <UniqueIdentifier>{2b1654e0-1591-476f-bca1-ab0e0481bdbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DFrameWork\ProgressBar">
+      <UniqueIdentifier>{2bdef6eb-1a02-451f-9fd0-a48fc1028493}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\Unit\Bullet">
+      <UniqueIdentifier>{fda9c122-70d5-4191-a020-dfdba92bef99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\Unit\Managers">
+      <UniqueIdentifier>{803097ad-a35d-4ef2-9e5f-190ba9a5d8a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\Unit\Enemy">
+      <UniqueIdentifier>{d3d1e398-b0da-4c96-b29e-9eb3403dcd0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\Tile">
+      <UniqueIdentifier>{f279149c-e05e-49db-a776-20ebf4d302cf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -150,8 +183,41 @@
     <ClInclude Include="Button.h">
       <Filter>2DFrameWork\Button</Filter>
     </ClInclude>
+    <ClInclude Include="Research.h">
+      <Filter>MainGame\Research</Filter>
+    </ClInclude>
+    <ClInclude Include="Powerup.h">
+      <Filter>MainGame\Powerup</Filter>
+    </ClInclude>
+    <ClInclude Include="Unit.h">
+      <Filter>MainGame\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressBar.h">
+      <Filter>2DFrameWork\ProgressBar</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>MainGame\Unit\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitManager.h">
+      <Filter>MainGame\Unit\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyManager.h">
+      <Filter>MainGame\Unit\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="AllyManager.h">
+      <Filter>MainGame\Unit\Managers</Filter>
+    </ClInclude>
     <ClInclude Include="Tile.h">
-      <Filter>MainGame\GameScene\Tile</Filter>
+      <Filter>MainGame\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="Tower.h">
+      <Filter>MainGame\Building\Tower</Filter>
+    </ClInclude>
+    <ClInclude Include="MapTool.h">
+      <Filter>MainGame\MapTool</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingManager.h">
+      <Filter>MainGame\Building</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -215,8 +281,20 @@
     <ClCompile Include="Button.cpp">
       <Filter>2DFrameWork\Button</Filter>
     </ClCompile>
+    <ClCompile Include="ProgressBar.cpp">
+      <Filter>2DFrameWork\ProgressBar</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>MainGame\Unit\Bullet</Filter>
+    </ClCompile>
     <ClCompile Include="Tile.cpp">
-      <Filter>MainGame\GameScene\Tile</Filter>
+      <Filter>MainGame\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="Tower.cpp">
+      <Filter>MainGame\Building\Tower</Filter>
+    </ClCompile>
+    <ClCompile Include="MapTool.cpp">
+      <Filter>MainGame\MapTool</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

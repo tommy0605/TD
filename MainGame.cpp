@@ -7,8 +7,11 @@ void MainGame::Init()
 
 	SCENEMANAGER->AddScene("start", new StartScene);
 	SCENEMANAGER->AddScene("game", new GameScene);
-
-	SCENEMANAGER->ChangeScene("start");
+	SCENEMANAGER->AddScene("maptool", new MapTool);
+	
+	SCENEMANAGER->ChangeScene("maptool");
+	IMAGEMANAGER->AddImage("td", L"image/TDTOWER.bmp", 192, 230, 5, 6);
+	IMAGEMANAGER->AddImage("gtd", L"image/gstd.bmp", 190, 152, 5, 4, true, RGB(255,0,255));
 }
 
 void MainGame::Update()

@@ -19,8 +19,8 @@ Tile::~Tile()
 
 void Tile::Init(int x, int y)
 {
-	color = RGB(255, 255, 255);
-	hPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+	color = RGB(80, 80, 80);
+	hPen = CreatePen(PS_SOLID, 1, RGB(20, 20, 20));
 
 	center.x = x * TILESIZE + TILESIZE / 2;
 	center.y = y * TILESIZE + TILESIZE / 2;

@@ -1,15 +1,9 @@
 #pragma once
-//A* 알고리즘 : 출발 꼭짓점에서 부터 목표 꼭짓점까지
-//가는 최단 경로를 찾아내는 알고리즘
-//f(n) : 최단 경로
-//g(n) : 출발 꼭짓점 부터 꼭짓점 까지의 경로 가중치
-//h(n) : 꼭짓점 n으로 부터 목표 꼭짓점 까지의 추정 결로 가중치
-//f(n) = g(n) + h(n)
 
-#define TILESIZE 10
+#define TILESIZE 15
 
-#define TILEX (WINWIDTH / TILESIZE)
-#define TILEY (WINHEIGHT / TILESIZE)
+#define TILEX (TWINWIDTH / TILESIZE)
+#define TILEY (TWINHEIGHT / TILESIZE)
 
 enum STATE
 {
