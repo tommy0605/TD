@@ -2,6 +2,11 @@
 
 void GameScene::Init()
 {
+	curTower = new Tower;
+
+	mouseRC = RectMake(mousePos.x, mousePos.y, 20, 20);
+	bm = new BuildingManager;
+	bm->Init();
 	map = new MapTool;
 	map->SetTile();
 	map->LoadMap();
@@ -11,6 +16,16 @@ void GameScene::Init()
 
 void GameScene::Update()
 {
+	curTower = bm->SetCurrTower();
+	if (curTower != NULL)
+	{
+		if (curTower->image != NULL)
+		{
+			ccTower = *curTower;
+		}
+	}
+	mouseRC = RectMake(mousePos.x, mousePos.y, 20, 20);
+
 }
 
 void GameScene::Render(HDC hdc)
@@ -24,9 +39,19 @@ void GameScene::Render(HDC hdc)
 	DeleteObject(hOldBrush);
 
 	map->TotalRender(hdc);
-	IMAGEMANAGER->FindImage("gtd")->Render(hdc,0,0);
+
+	bm->Render(hdc);
+
+	if (ccTower.image != NULL)
+		ccTower.image->RenderSize(hdc, mousePos.x, mousePos.y, ccTower.fX, ccTower.fY, 20, 20);
+	
 }
 
 void GameScene::Release()
 {
+}
+
+void GameScene::SetCurrTower()
+{
+	
 }

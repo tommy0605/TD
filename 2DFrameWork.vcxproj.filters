@@ -296,6 +296,9 @@
     <ClCompile Include="MapTool.cpp">
       <Filter>MainGame\MapTool</Filter>
     </ClCompile>
+    <ClCompile Include="BuildingManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2DFrameWork.rc">

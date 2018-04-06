@@ -10,10 +10,12 @@ protected:
 	vector<Tower*> usingTower;
 
 public:
-	void Init(string name, float hp, BUILDNAME bname);
+	void Init();
 	void Update();
 	void Render(HDC hdc);
 
+	Tower* FindTower(string key);
+	Tower* SetCurrTower();
 	void Attack();
 
 

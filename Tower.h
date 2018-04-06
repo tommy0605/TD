@@ -34,24 +34,21 @@ enum BUILDNAME
 
 class Tower
 {
-private:
+public:
 	string bName;
-	Image* image;
 	int fX;
 	int fY;
 	int dFX;
 	int dFY;
 	float hp;
 	float maxHp;
+	Image* image;
+	RECT rc;
 	BUILDNAME buildName;
-	
-public:
+
 	//TODO: 공격, 맞는거 처리
-	void Init(string name, float hp, BUILDNAME bname);
-	void Render(HDC hdc);
-	void RenderMap(HDC hdc);
-	
-	Image* GetImage() { return image; }
-	float* GetHp() { return &hp; }
-	BUILDNAME GetBE() { return buildName; }
+	void Init(string name, float hp, BUILDNAME bname, int frameX, int frameY, int disFrameX, int disFrameY);
+	void Render(HDC hdc, int posx, int posy);
+	void DisRender(HDC hdc, int posx, int posy);
+	void GameRender(HDC hdc, int posx, int posy);
 };

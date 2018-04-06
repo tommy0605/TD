@@ -188,6 +188,7 @@
     <ClCompile Include="2DFrameWork.cpp" />
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="BackBuffer.cpp" />
+    <ClCompile Include="BuildingManager.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Effect.cpp" />

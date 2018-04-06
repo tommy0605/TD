@@ -23,6 +23,8 @@ void MapTool::Init()
 	sampleTile[3]->color = RGB(255, 30, 255);
 	sampleTile[3]->isOpen = true;
 	sampleTile[3]->attribute = END;
+	curTile = new Tile;
+	curTile = sampleTile[1];
 }
 
 void MapTool::Update()
@@ -68,7 +70,7 @@ void MapTool::Render(HDC hdc)
 	{
 		sampleTile[i]->Render(hdc);
 	}
-	IMAGEMANAGER->FindImage("gtd")->Render(hdc, 0, 0);
+
 }
 
 void MapTool::Release()

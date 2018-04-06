@@ -7,6 +7,11 @@ class GameScene : public GameNode
 {
 private:
 	MapTool * map;
+	BuildingManager* bm;
+	RECT mouseRC;
+	Tower* curTower;
+	Tower ccTower;
+
 
 	bool isPause;
 public:
@@ -14,5 +19,8 @@ public:
 	virtual void Update();
 	virtual void Render(HDC hdc);
 	virtual void Release();
+	
+	void SetCurrTower();
 
+	void SetMap(MapTool* maap) { map = maap; }
 };
