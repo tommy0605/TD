@@ -24,6 +24,10 @@ void GameScene::Update()
 			ccTower = *curTower;
 		}
 	}
+	for (int i = 0; i < bm->GetUsingTowerList().size(); i++)
+	{
+		map->SetTowerClosedMap(bm->GetUsingTowerList()[i]->rc);
+	}
 }
 
 void GameScene::Render(HDC hdc)

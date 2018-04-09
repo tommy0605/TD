@@ -37,4 +37,5 @@ public:
 	void PathFinder();
 	void SetWall();
 	RECT GetMouseRect();
+	void SetTowerClosedMap(RECT rc);
 };

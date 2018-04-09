@@ -19,6 +19,6 @@ public:
 	void SetTowerOnMap(Tower curTower, int posx, int posy);
 	void Attack();
 
-
+	vector<Tower*> GetUsingTowerList() { return usingTower; }
 	
 };

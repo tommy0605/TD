@@ -5,6 +5,11 @@ void Tower::Init(string name, float hp, BUILDNAME bname, int frameX, int frameY,
 	bm = new BulletManager;
 	pos.x = 9999;
 	pos.y = 9999;
+
+	rc.left = pos.x + 1;
+	rc.top = pos.y + 1;
+	rc.right = pos.x + 28;
+	rc.bottom = pos.x + 28;
 	bName = name;
 	this->hp = hp;
 	maxHp = hp;
@@ -33,7 +38,11 @@ void Tower::DisRender(HDC hdc, int posx, int posy)
 
 void Tower::GameRender(HDC hdc, int posx, int posy)
 {
-	image->RenderSize(hdc, posx, posy, fX, fY, 30, 30);
+	rc.left = posx + 1;
+	rc.top = posy + 1;
+	rc.right = posx + 28;
+	rc.bottom = posy + 28;
+	image->RenderSize(hdc, posx, posy, fX, fY, 25, 25);
 }
 
 void Tower::Attack(float angle)
@@ -41,7 +50,11 @@ void Tower::Attack(float angle)
 	POINT pos;
 	pos.x = rc.left;
 	pos.y = rc.top;
-	bm->Fire(pos, angle, bulletSpeed);
-	
+	count++;
+	if (count > fireRate)
+	{
+		bm->Fire(pos, angle, bulletSpeed);
+		count = 0;
+	}
 }
 

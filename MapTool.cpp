@@ -29,8 +29,8 @@ void MapTool::Init()
 
 void MapTool::Update()
 {
-	//if (KEYMANAGER->isOnceKeyDown(VK_F1))
-		//SaveMap();
+	if (KEYMANAGER->isOnceKeyDown(VK_F1))
+		SaveMap();
 	if (KEYMANAGER->isOnceKeyDown(VK_F2))
 	{
 		LoadMap();
@@ -41,12 +41,7 @@ void MapTool::Update()
 	SetWall();
 	if (isStart)
 	{
-		count++;
-		if (count > 5)
-		{
-			PathFinder();
-			count = 0;
-		}
+		PathFinder();	
 	}
 
 	if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
@@ -335,4 +330,19 @@ RECT MapTool::GetMouseRect()
 		}
 	}
 	return RECT();
+}
+
+void MapTool::SetTowerClosedMap(RECT rc)
+{
+	RECT rcT;
+	for (int i = 0; i < totalList.size(); i++)
+	{
+		if (IntersectRect(&rcT, &totalList[i]->rc, &rc))
+		{
+			totalList[i]->attribute = WALL;
+			totalList[i]->color = RGB(20, 20, 20);
+			totalList[i]->isOpen = false;
+		}
+	}
+
 }
