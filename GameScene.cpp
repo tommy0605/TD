@@ -24,8 +24,6 @@ void GameScene::Update()
 			ccTower = *curTower;
 		}
 	}
-	mouseRC = RectMake(mousePos.x, mousePos.y, 20, 20);
-
 }
 
 void GameScene::Render(HDC hdc)
@@ -43,15 +41,21 @@ void GameScene::Render(HDC hdc)
 	bm->Render(hdc);
 
 	if (ccTower.image != NULL)
-		ccTower.image->RenderSize(hdc, mousePos.x, mousePos.y, ccTower.fX, ccTower.fY, 20, 20);
-	
+	{
+		//ccTower.image->RenderSize(hdc, mousePos.x, mousePos.y, ccTower.fX, ccTower.fY, 28, 28);
+		if (mousePos.x < TWINWIDTH - 15 && mousePos.x > 15 && mousePos.y < TWINWIDTH - 15 && mousePos.y > 15)
+		{
+			ccTower.image->RenderSize(hdc, map->GetMouseRect().left+1, map->GetMouseRect().top+1, ccTower.fX, ccTower.fY, 28, 28);
+			if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
+			{
+				bm->SetTowerOnMap(ccTower, map->GetMouseRect().left, map->GetMouseRect().top);
+			}
+		}
+	}
 }
 
 void GameScene::Release()
 {
 }
 
-void GameScene::SetCurrTower()
-{
-	
-}
+

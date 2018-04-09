@@ -2,10 +2,10 @@
 
 struct Bullet
 {
-	Image* image;         //ÀÓ½Ã ±¸½½
-	RECT rc;              //ÃÑ¾Ë Å©±â
-	float angle;		  //ÃÑ¾Ë °¢µµ
-	float speed;		  //ÃÑ¾Ë ¼Óµµ ±Ã±ØÀÇ ¼Óµµ
+	RECT rc;				//ÃÑ¾Ë Å©±â
+	float angle;			//ÃÑ¾Ë °¢µµ
+	float speed;			//ÃÑ¾Ë ¼Óµµ ±Ã±ØÀÇ ¼Óµµ
+	int size;
 	bool isFire;		  //
 	int count;			  //
 
@@ -27,25 +27,24 @@ struct Bullet
 	{
 		if (isFire)
 		{
-			image->Render(hdc, rc.left, rc.top, 0, 0);
+			Ellipse(hdc, rc.left, rc.top, rc.right, rc.bottom);
 		}
 	}
 
 	void SetRect()
 	{
-		rc.right = rc.left + image->GetW();
-		rc.bottom = rc.top + image->GetH();
+		rc.right = rc.left + size;
+		rc.bottom = rc.top + size;
 	}
-	inline Image* GetBulletImage() { return image; }
 };
 
 class BulletManager
 {
 private:
 	vector<Bullet*> bulletList;
-	int bulletMax;
+	COLORREF bc;
 public:
-	void Init(string imageName, int maxCount);
+	void Init(int size, COLORREF bcc);
 	void Update();
 	void Render(HDC hdc);
 

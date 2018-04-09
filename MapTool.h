@@ -36,4 +36,5 @@ public:
 	void LoadMap();
 	void PathFinder();
 	void SetWall();
+	RECT GetMouseRect();
 };

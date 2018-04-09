@@ -1,16 +1,17 @@
 #include "stdafx.h"
 #include "Bullet.h"
 
-void BulletManager::Init(string imageName, int maxCount)
+void BulletManager::Init(int size, COLORREF bcc)
 {
-	for (int i = 0; i < maxCount; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		Bullet* bullet;
 		bullet = new Bullet;
-		bullet->image = IMAGEMANAGER->FindImage(imageName);
+		bullet->size = size;
 		bullet->isFire = false;
 		bulletList.push_back(bullet);
 	}
+	bc = bcc;
 }
 
 void BulletManager::Update()
@@ -24,10 +25,14 @@ void BulletManager::Update()
 
 void BulletManager::Render(HDC hdc)
 {
+	HBRUSH hOldBrush;
+	hOldBrush = (HBRUSH)SelectObject(hdc, CreateSolidBrush(bc));
 	for (Bullet *b : bulletList)
 	{
 		b->Render(hdc);
 	}
+	SelectObject(hdc, hOldBrush);
+	DeleteObject(hOldBrush);
 }
 
 void BulletManager::Fire(POINT pos, float angle, float speed)
@@ -41,9 +46,18 @@ void BulletManager::Fire(POINT pos, float angle, float speed)
 			bulletList[i]->rc.top = pos.y;
 			bulletList[i]->angle = angle;
 			bulletList[i]->speed = speed;
-			break;
+			return;
 		}
 	}
+	Bullet* bullet;
+	bullet = new Bullet;
+	bullet->size = bullet[1].size;
+	bullet->isFire = true;
+	bullet->rc.left = pos.x;
+	bullet->rc.top = pos.y;
+	bullet->angle = angle;
+	bullet->speed = speed;
+	bulletList.push_back(bullet);
 }
 
 bool BulletManager::IsCollision(RECT rc)

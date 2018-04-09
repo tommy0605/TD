@@ -1,40 +1,44 @@
 #include "stdafx.h"
+#define BULLETSIZE 20
+#define FIRERATEM 5.0f
+#define RANGE 200.0f
+
 
 void BuildingManager::Init()
 {
 	Tower tower;
 	string str = "lone";
-	tower.Init(str, 100, LONE, 0, 0, 0, 1);
+	tower.Init(str, 100, LONE, 0, 0, 0, 1, 20.0f, FIRERATEM*2, RANGE/4, BULLETSIZE/2, RGB(0,150,0));
 	towerList.insert(make_pair(str, tower));
 	str = "ltwo";
-	tower.Init(str, 100, LTWO, 0, 2, 0, 3);
+	tower.Init(str, 100, LTWO, 0, 2, 0, 3, 25.0f, FIRERATEM*2 -1.0f, RANGE/4, BULLETSIZE/2, RGB(0, 150, 0));
 	towerList.insert(make_pair(str, tower));
 	str = "lthr";
-	tower.Init(str, 100, LTHR, 0, 4, 0, 5);
+	tower.Init(str, 100, LTHR, 0, 4, 0, 5, 30.0f, FIRERATEM*2 - 2.0f, RANGE/4, BULLETSIZE/2, RGB(0, 150, 0));
 	towerList.insert(make_pair(str, tower));
 	str = "drlone";
-	tower.Init(str, 100, DRLONE, 1, 0, 1, 1);
+	tower.Init(str, 100, DRLONE, 1, 0, 1, 1, 40.0f, FIRERATEM, RANGE/5, BULLETSIZE/4, RGB(150, 20, 150));
 	towerList.insert(make_pair(str, tower));
 	str = "drltwo";
-	tower.Init(str, 100, DRLTWO, 1, 2, 1, 3);
+	tower.Init(str, 100, DRLTWO, 1, 2, 1, 3, 45.0f, FIRERATEM - 1.0f, RANGE/5, BULLETSIZE/4, RGB(150, 20, 150));
 	towerList.insert(make_pair(str, tower));
 	str = "drlthr";
-	tower.Init(str, 100, DRLTHR, 1, 4, 1, 5);
+	tower.Init(str, 100, DRLTHR, 1, 4, 1, 5, 50.0f, FIRERATEM - 2.0f, RANGE/5, BULLETSIZE/4, RGB(150, 20, 150));
 	towerList.insert(make_pair(str, tower));
 	str = "splone";
-	tower.Init(str, 100, SPLONE, 4, 4, 4, 5);
+	tower.Init(str, 100, SPLONE, 4, 4, 4, 5, 20.0f, FIRERATEM*4, RANGE/2, BULLETSIZE, RGB(150, 20, 20));
 	towerList.insert(make_pair(str, tower));
 	str = "spltwo";
-	tower.Init(str, 100, SPLTWO, 2, 0, 2, 1);
+	tower.Init(str, 100, SPLTWO, 2, 0, 2, 1, 25.0f, FIRERATEM*4-1.0f, RANGE/2, BULLETSIZE, RGB(150, 20, 20));
 	towerList.insert(make_pair(str, tower));
 	str = "splthr";
-	tower.Init(str, 100, SPLTHR, 2, 2, 2, 3);
+	tower.Init(str, 100, SPLTHR, 2, 2, 2, 3, 30.0f, FIRERATEM*4-2.0f, RANGE/2, BULLETSIZE, RGB(150, 20, 20));
 	towerList.insert(make_pair(str, tower));
 	str = "snpone";
-	tower.Init(str, 100, SNPONE, 4, 0, 4, 1);
+	tower.Init(str, 100, SNPONE, 4, 0, 4, 1, 100.0f, FIRERATEM*4, RANGE, BULLETSIZE/2, RGB(20, 20, 150));
 	towerList.insert(make_pair(str, tower));
 	str = "spntwo";
-	tower.Init(str, 100, SNPTWO, 4, 2, 4, 3);
+	tower.Init(str, 100, SNPTWO, 4, 2, 4, 3, 100.0f, FIRERATEM*4-1.0f, RANGE, BULLETSIZE/2, RGB(20, 20, 150));
 	towerList.insert(make_pair(str, tower));
 }
 
@@ -78,6 +82,11 @@ void BuildingManager::Render(HDC hdc)
 	towerList.find("spntwo")->second.Render(hdc, WINWIDTH - IMAGEMANAGER->FindImage("td")->GetFrameW(), 0 + i * IMAGEMANAGER->FindImage("td")->GetFrameH());
 	towerList.find("spntwo")->second.rc = RectMake(WINWIDTH - IMAGEMANAGER->FindImage("td")->GetFrameW(), 0 + i * IMAGEMANAGER->FindImage("td")->GetFrameH(), IMAGEMANAGER->FindImage("td")->GetFrameW(), IMAGEMANAGER->FindImage("td")->GetFrameH());
 	i++;
+
+	for (int i = 0; i < usingTower.size(); i++)
+	{
+		usingTower[i]->GameRender(hdc, usingTower[i]->pos.x, usingTower[i]->pos.y);
+	}
 }
 
 Tower* BuildingManager::FindTower(string key)
@@ -108,4 +117,13 @@ Tower* BuildingManager::SetCurrTower()
 			}
 		}
 	}
+}
+
+void BuildingManager::SetTowerOnMap(Tower curTower, int posx, int posy)
+{
+	Tower* tower = new Tower;
+	*tower = curTower;
+	tower->pos.x = posx;
+	tower->pos.y = posy;
+	usingTower.push_back(tower);
 }

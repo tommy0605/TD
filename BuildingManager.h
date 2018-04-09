@@ -16,6 +16,7 @@ public:
 
 	Tower* FindTower(string key);
 	Tower* SetCurrTower();
+	void SetTowerOnMap(Tower curTower, int posx, int posy);
 	void Attack();
 
 

@@ -324,3 +324,15 @@ void MapTool::SetWall()
 		}
 	}
 }
+
+RECT MapTool::GetMouseRect()
+{
+	for (int i = 0; i < totalList.size(); i++)
+	{
+		if (PtInRect(&totalList[i]->rc, mousePos))
+		{
+			return totalList[i]->rc;
+		}
+	}
+	return RECT();
+}
