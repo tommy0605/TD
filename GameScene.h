@@ -11,7 +11,8 @@ private:
 	RECT mouseRC;
 	Tower* curTower;
 	Tower ccTower;
-
+	POINT endPos;
+	POINT startPos;
 
 	bool isPause;
 public:

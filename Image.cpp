@@ -184,6 +184,46 @@ void Image::RenderSize(HDC hdc, int destX, int destY, int frameX, int frameY, in
 	}
 }
 
+void Image::CenterPosRender(HDC hdc, POINT pos, int width, int height)
+{
+	if (isTrans)
+	{
+		GdiTransparentBlt(
+			hdc, pos.x + this->GetW() / 2, pos.y + this->GetH() / 2, width, height,
+			hMemDC,
+			0, 0, this->width, this->height,
+			transColor
+		);
+	}
+	else
+	{
+		StretchBlt(hdc, pos.x + this->GetW() / 2, pos.y + this->GetH() / 2, width, height,
+			hMemDC, 0, 0, this->width, this->height, SRCCOPY);
+	}
+}
+
+void Image::CenterPosRender(HDC hdc, POINT pos, int frameX, int frameY, int width, int height)
+{
+	if (isTrans)
+	{
+		GdiTransparentBlt(
+			hdc, pos.x + this->GetFrameW()/2, pos.y + this->GetFrameH() / 2,
+			width, height,
+			hMemDC,
+			frameWidth * frameX,
+			frameHeight * frameY,
+			frameWidth, frameHeight,
+			transColor
+		);
+	}
+	else
+	{
+		StretchBlt(hdc, pos.x + this->GetFrameW() / 2, pos.y + this->GetFrameH() / 2, width, height,
+			hMemDC, frameWidth * frameX, frameHeight * frameY,
+			frameWidth, frameHeight, SRCCOPY);
+	}
+}
+
 //alpha : 0~255 (0이면 투명, 255면 불투명)
 void Image::AlphaRender(HDC hdc, int destX, int destY, int alpha)
 {

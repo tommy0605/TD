@@ -3,7 +3,8 @@
 void GameScene::Init()
 {
 	curTower = new Tower;
-
+	endPos = { 9999, 9999 };
+	startPos = { 9999,9999 };
 	mouseRC = RectMake(mousePos.x, mousePos.y, 20, 20);
 	bm = new BuildingManager;
 	bm->Init();
@@ -49,17 +50,23 @@ void GameScene::Render(HDC hdc)
 		//ccTower.image->RenderSize(hdc, mousePos.x, mousePos.y, ccTower.fX, ccTower.fY, 28, 28);
 		if (mousePos.x < TWINWIDTH - 15 && mousePos.x > 15 && mousePos.y < TWINWIDTH - 15 && mousePos.y > 15)
 		{
-			ccTower.image->RenderSize(hdc, map->GetMouseRect().left+1, map->GetMouseRect().top+1, ccTower.fX, ccTower.fY, 28, 28);
+			ccTower.image->RenderSize(hdc, map->GetMouseRect().left+1, map->GetMouseRect().top+1, ccTower.fX, ccTower.fY, 25, 25);
 			if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
 			{
 				bm->SetTowerOnMap(ccTower, map->GetMouseRect().left, map->GetMouseRect().top);
 			}
 		}
 	}
+	if (map->GetEndTileRect().top != NULL)
+	{
+		endPos = GetRectCenterPos(map->GetEndTileRect());
+		IMAGEMANAGER->FindImage("base")->CenterPosRender(hdc, endPos, 45, 45);
+	}
 }
 
 void GameScene::Release()
 {
+
 }
 
 

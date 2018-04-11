@@ -9,7 +9,7 @@ void MapTool::Init()
 	for (int i = 0; i < 4; i++)
 	{
 		sampleTile[i] = new Tile;
-		sampleTile[i]->Init(60-i, 0);
+		sampleTile[i]->Init(57-i, 0);
 	}
 	sampleTile[0]->color = RGB(0, 0, 0);
 	sampleTile[0]->isOpen = false;
@@ -329,7 +329,7 @@ RECT MapTool::GetMouseRect()
 			return totalList[i]->rc;
 		}
 	}
-	return RECT();
+	return RECT{9999,9999,9999,9999};
 }
 
 void MapTool::SetTowerClosedMap(RECT rc)

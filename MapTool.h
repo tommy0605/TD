@@ -38,4 +38,15 @@ public:
 	void SetWall();
 	RECT GetMouseRect();
 	void SetTowerClosedMap(RECT rc);
+
+	RECT GetEndTileRect() {
+		if (endTile == NULL)
+			return RECT{};
+		return endTile->rc;
+	}
+	RECT GetStartTileRect() {
+		if (startTile == NULL)
+			return RECT{};
+		return startTile->rc;
+	}
 };

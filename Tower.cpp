@@ -3,8 +3,8 @@
 void Tower::Init(string name, float hp, BUILDNAME bname, int frameX, int frameY, int disFrameX, int disFrameY, float bulSpeed, float fireR, float rangee, int bulletSize, COLORREF bcc)
 {
 	bm = new BulletManager;
-	pos.x = 9999;
-	pos.y = 9999;
+	pos.x = 9000;
+	pos.y = 9000;
 
 	rc.left = pos.x + 1;
 	rc.top = pos.y + 1;
@@ -38,11 +38,13 @@ void Tower::DisRender(HDC hdc, int posx, int posy)
 
 void Tower::GameRender(HDC hdc, int posx, int posy)
 {
+	pos.x = posx;
+	pos.y = posy;
 	rc.left = posx + 1;
 	rc.top = posy + 1;
 	rc.right = posx + 28;
 	rc.bottom = posy + 28;
-	image->RenderSize(hdc, posx, posy, fX, fY, 25, 25);
+	image->RenderSize(hdc, posx, posy, fX, fY, 28, 28);
 }
 
 void Tower::Attack(float angle)

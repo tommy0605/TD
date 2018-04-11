@@ -40,6 +40,9 @@ public:
 	void RenderSize(HDC hdc, int destX, int destY, int width, int height);
 	void RenderSize(HDC hdc, int destX, int destY, int frameX, int frameY, int width, int height);
 
+	void CenterPosRender(HDC hdc, POINT pos, int width, int height);
+	void CenterPosRender(HDC hdc, POINT pos, int frameX, int frameY, int width, int height);
+
 	void AlphaRender(HDC hdc, int destX, int destY, int alpha);
 	void AlphaRender(HDC hdc, int destX, int destY, int frameX, int frameY, int alpha);
 
