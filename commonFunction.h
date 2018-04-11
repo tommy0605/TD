@@ -152,3 +152,44 @@ inline float GetAngle(POINT pos1, POINT pos2)
 
 	return angle;
 }
+
+inline bool IsPointInCircle(POINT cp, float radius, POINT pos)
+{
+	float dX = cp.x - pos.x;
+	float dY = cp.y - pos.y;
+
+	float length = sqrt(dX*dX + dY * dY);
+	if (length > radius)
+		return false;
+	else
+		return true;
+}
+
+bool IsCollisionCR(POINT cp, int radius, RECT rc)
+{
+	if ((rc.left <= cp.x && cp.x <= rc.right) || (rc.top <= cp.y && cp.y <= rc.bottom))
+	{
+		RECT rcTemp =
+		{
+			rc.left - radius,
+			rc.top - radius,
+			rc.right + radius,
+			rc.bottom + radius
+		};
+
+		if ((rcTemp.left < cp.x && cp.x < rcTemp.right) && (rcTemp.top < cp.y && cp.y < rcTemp.bottom))
+			return true;
+	}
+	else
+	{
+		if (IsPointInCircle(cp, radius, POINT{ rc.left, rc.top }))
+			return true;
+		if (IsPointInCircle(cp, radius, POINT{ rc.left, rc.bottom }))
+			return true;
+		if (IsPointInCircle(cp, radius, POINT{ rc.right, rc.top }))
+			return true;
+		if (IsPointInCircle(cp, radius, POINT{ rc.right, rc.bottom }))
+			return true;
+	}
+	return false;
+}
