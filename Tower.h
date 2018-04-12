@@ -50,8 +50,9 @@ struct Tower
 	BUILDNAME buildName;
 	BulletManager* bm;
 	float count;
+	float damage;
 	//TODO: 공격, 맞는거 처리
-	void Init(string name, float hp, BUILDNAME bname, int frameX, int frameY, int disFrameX, int disFrameY, float bulSpeed, float fireR, float rangee, int bulletSize, COLORREF bcc);
+	void Init(string name, float hp, BUILDNAME bname, int frameX, int frameY, int disFrameX, int disFrameY, float bulSpeed, float fireR, float rangee, int bulletSize, COLORREF bcc, float damage);
 	void Render(HDC hdc, int posx, int posy);
 	void DisRender(HDC hdc, int posx, int posy);
 	void GameRender(HDC hdc, int posx, int posy);

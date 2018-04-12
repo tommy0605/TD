@@ -189,7 +189,7 @@ void Image::CenterPosRender(HDC hdc, POINT pos, int width, int height)
 	if (isTrans)
 	{
 		GdiTransparentBlt(
-			hdc, pos.x + this->GetW() / 2, pos.y + this->GetH() / 2, width, height,
+			hdc, pos.x - this->GetW() / 2, pos.y - this->GetH() / 2, width, height,
 			hMemDC,
 			0, 0, this->width, this->height,
 			transColor
@@ -197,7 +197,7 @@ void Image::CenterPosRender(HDC hdc, POINT pos, int width, int height)
 	}
 	else
 	{
-		StretchBlt(hdc, pos.x + this->GetW() / 2, pos.y + this->GetH() / 2, width, height,
+		StretchBlt(hdc, pos.x - this->GetW() / 2, pos.y - this->GetH() / 2, width, height,
 			hMemDC, 0, 0, this->width, this->height, SRCCOPY);
 	}
 }
@@ -207,7 +207,7 @@ void Image::CenterPosRender(HDC hdc, POINT pos, int frameX, int frameY, int widt
 	if (isTrans)
 	{
 		GdiTransparentBlt(
-			hdc, pos.x + this->GetFrameW()/2, pos.y + this->GetFrameH() / 2,
+			hdc, pos.x - this->GetFrameW()/2, pos.y - this->GetFrameH() / 2,
 			width, height,
 			hMemDC,
 			frameWidth * frameX,
@@ -218,7 +218,7 @@ void Image::CenterPosRender(HDC hdc, POINT pos, int frameX, int frameY, int widt
 	}
 	else
 	{
-		StretchBlt(hdc, pos.x + this->GetFrameW() / 2, pos.y + this->GetFrameH() / 2, width, height,
+		StretchBlt(hdc, pos.x - this->GetFrameW() / 2, pos.y - this->GetFrameH() / 2, width, height,
 			hMemDC, frameWidth * frameX, frameHeight * frameY,
 			frameWidth, frameHeight, SRCCOPY);
 	}

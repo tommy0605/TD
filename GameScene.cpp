@@ -5,6 +5,7 @@ void GameScene::Init()
 	curTower = new Tower;
 	endPos = { 9999, 9999 };
 	startPos = { 9999,9999 };
+	endRect = { 9999,9999,9999,9999 };
 	mouseRC = RectMake(mousePos.x, mousePos.y, 20, 20);
 	bm = new BuildingManager;
 	bm->Init();
@@ -59,8 +60,13 @@ void GameScene::Render(HDC hdc)
 	}
 	if (map->GetEndTileRect().top != NULL)
 	{
-		endPos = GetRectCenterPos(map->GetEndTileRect());
-		IMAGEMANAGER->FindImage("base")->CenterPosRender(hdc, endPos, 45, 45);
+		endPos.x = map->GetEndTileRect().left - 15;
+		endPos.y = map->GetEndTileRect().top - 15;
+		endRect.left = endPos.x;
+		endRect.top = endPos.y;
+		endRect.right = endPos.x + 45;
+		endRect.bottom = endPos.y + 45;
+		IMAGEMANAGER->FindImage("base")->RenderSize(hdc, endPos.x, endPos.y, 2, 0, 45,45);
 	}
 }
 

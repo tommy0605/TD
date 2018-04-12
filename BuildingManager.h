@@ -18,6 +18,10 @@ public:
 	Tower* SetCurrTower();
 	void SetTowerOnMap(Tower curTower, int posx, int posy);
 	void Attack();
+	void UpgradeRange(float upg);
+	void UpgradeDamage(float upg);
+	void UpgradeFireRate(float upg);
+
 
 	vector<Tower*> GetUsingTowerList() { return usingTower; }
 	

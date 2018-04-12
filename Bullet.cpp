@@ -1,13 +1,14 @@
 #include "stdafx.h"
 #include "Bullet.h"
 
-void BulletManager::Init(int size, COLORREF bcc)
+void BulletManager::Init(int size, COLORREF bcc, float damage)
 {
 	for (int i = 0; i < 5; i++)
 	{
 		Bullet* bullet;
 		bullet = new Bullet;
 		bullet->size = size;
+		bullet->damage = damage;
 		bullet->isFire = false;
 		bulletList.push_back(bullet);
 	}
@@ -35,13 +36,14 @@ void BulletManager::Render(HDC hdc)
 	DeleteObject(hOldBrush);
 }
 
-void BulletManager::Fire(POINT pos, float angle, float speed)
+void BulletManager::Fire(POINT pos, float angle, float speed, float damage)
 {
 	for (int i = 0; i < bulletList.size(); i++)
 	{
 		if (!bulletList[i]->isFire)
 		{
 			bulletList[i]->isFire = true;
+			bulletList[i]->damage = damage;
 			bulletList[i]->rc.left = pos.x;
 			bulletList[i]->rc.top = pos.y;
 			bulletList[i]->angle = angle;
@@ -53,6 +55,7 @@ void BulletManager::Fire(POINT pos, float angle, float speed)
 	bullet = new Bullet;
 	bullet->size = bullet[1].size;
 	bullet->isFire = true;
+	bullet->damage = damage;
 	bullet->rc.left = pos.x;
 	bullet->rc.top = pos.y;
 	bullet->angle = angle;

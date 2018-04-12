@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-void Tower::Init(string name, float hp, BUILDNAME bname, int frameX, int frameY, int disFrameX, int disFrameY, float bulSpeed, float fireR, float rangee, int bulletSize, COLORREF bcc)
+void Tower::Init(string name, float hp, BUILDNAME bname, int frameX, int frameY, int disFrameX, int disFrameY, float bulSpeed, float fireR, float rangee, int bulletSize, COLORREF bcc, float damage)
 {
 	bm = new BulletManager;
 	pos.x = 9000;
@@ -21,7 +21,8 @@ void Tower::Init(string name, float hp, BUILDNAME bname, int frameX, int frameY,
 	fireRate = fireR;
 	count = 0;
 	range = rangee;
-	bm->Init(bulletSize, bcc);
+	this->damage = damage;
+	bm->Init(bulletSize, bcc, damage);
 	bulletSpeed = bulSpeed;
 	image = IMAGEMANAGER->FindImage("td");
 }
@@ -55,7 +56,7 @@ void Tower::Attack(float angle)
 	count++;
 	if (count > fireRate)
 	{
-		bm->Fire(pos, angle, bulletSpeed);
+		bm->Fire(pos, angle, bulletSpeed, damage);
 		count = 0;
 	}
 }

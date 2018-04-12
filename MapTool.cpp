@@ -344,5 +344,4 @@ void MapTool::SetTowerClosedMap(RECT rc)
 			totalList[i]->isOpen = false;
 		}
 	}
-
 }

@@ -193,3 +193,12 @@ bool IsCollisionCR(POINT cp, int radius, RECT rc)
 	}
 	return false;
 }
+
+inline POINT GetRectCenterPos(RECT rc)
+{
+	POINT pos;
+	pos.x = rc.left + (rc.right - rc.left) / 2;
+	pos.y = rc.top + (rc.top - rc.bottom) / 2;
+
+	return pos;
+}

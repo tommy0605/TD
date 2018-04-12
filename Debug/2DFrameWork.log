@@ -1,0 +1,76 @@
+﻿  stdafx.cpp
+c:\users\suejin\documents\github\td\commonfunction.h(96): warning C4244: '초기화 중': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\suejin\documents\github\td\commonfunction.h(97): warning C4244: '초기화 중': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\suejin\documents\github\td\commonfunction.h(150): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\suejin\documents\github\td\commonfunction.h(158): warning C4244: '초기화 중': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\suejin\documents\github\td\commonfunction.h(159): warning C4244: '초기화 중': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\suejin\documents\github\td\commonfunction.h(185): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\suejin\documents\github\td\commonfunction.h(187): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\suejin\documents\github\td\commonfunction.h(189): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\suejin\documents\github\td\commonfunction.h(191): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\suejin\documents\github\td\bullet.h(17): warning C4244: '+=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\suejin\documents\github\td\bullet.h(18): warning C4244: '+=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\suejin\documents\github\td\gamescene.h(4): warning C4099: 'Tile': 처음에는 'struct'을(를) 사용하여 형식 이름을 표시했는데 이제는 'class'을(를) 사용하여 표시합니다.
+  c:\users\suejin\documents\github\td\tile.h(17): note: 'Tile' 선언을 참조하십시오.
+  2DFrameWork.cpp
+  Animation.cpp
+  BackBuffer.cpp
+  BuildingManager.cpp
+c:\users\suejin\documents\github\td\buildingmanager.cpp(87): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\suejin\documents\github\td\buildingmanager.cpp(134): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\suejin\documents\github\td\buildingmanager.cpp(142): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\suejin\documents\github\td\buildingmanager.cpp(150): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  Bullet.cpp
+c:\users\suejin\documents\github\td\bullet.cpp(41): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\suejin\documents\github\td\bullet.cpp(68): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  Button.cpp
+c:\users\suejin\documents\github\td\button.cpp(56): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Effect.cpp
+  EffectManager.cpp
+c:\users\suejin\documents\github\td\effectmanager.cpp(22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\suejin\documents\github\td\effectmanager.cpp(33): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\suejin\documents\github\td\effectmanager.cpp(64): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\suejin\documents\github\td\effectmanager.cpp(80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  Enemy.cpp
+c:\users\suejin\documents\github\td\enemy.cpp(68): warning C4244: '+=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\suejin\documents\github\td\enemy.cpp(69): warning C4244: '+=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  EnemyManager.cpp
+c:\users\suejin\documents\github\td\enemymanager.cpp(34): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\suejin\documents\github\td\enemymanager.cpp(49): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  GameNode.cpp
+  GameScene.cpp
+c:\users\suejin\documents\github\td\gamescene.cpp(29): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  Image.cpp
+  ImageFont.cpp
+c:\users\suejin\documents\github\td\imagefont.cpp(21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  ImageManager.cpp
+  KeyManager.cpp
+  MainGame.cpp
+  MapTool.cpp
+c:\users\suejin\documents\github\td\maptool.cpp(107): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\suejin\documents\github\td\maptool.cpp(147): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\suejin\documents\github\td\maptool.cpp(236): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\suejin\documents\github\td\maptool.cpp(241): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\suejin\documents\github\td\maptool.cpp(248): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\suejin\documents\github\td\maptool.cpp(311): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\suejin\documents\github\td\maptool.cpp(325): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\suejin\documents\github\td\maptool.cpp(338): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  ProgressBar.cpp
+c:\users\suejin\documents\github\td\progressbar.cpp(30): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  SceneManager.cpp
+  코드를 생성하고 있습니다...
+c:\users\suejin\documents\github\td\buildingmanager.cpp(121): warning C4715: 'BuildingManager::SetCurrTower': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  컴파일하고 있습니다...
+  SoundManager.cpp
+  StartScene.cpp
+  TextData.cpp
+c:\users\suejin\documents\github\td\textdata.cpp(42): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\suejin\documents\github\td\textdata.cpp(45): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\suejin\documents\github\td\textdata.cpp(72): warning C4101: 'temp' :참조되지 않은 지역 변수입니다.
+  Tile.cpp
+  TimeManager.cpp
+  Timer.cpp
+  Tower.cpp
+  코드를 생성하고 있습니다...
+c:\users\suejin\documents\github\td\textdata.cpp(49): warning C4172: 지역 변수 또는 임시: str의 주소를 반환하고 있습니다.
+  2DFrameWork.vcxproj -> C:\Users\SueJin\Documents\GitHub\TD\Debug\2DFrameWork.exe

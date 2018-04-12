@@ -8,6 +8,7 @@ struct Bullet
 	int size;
 	bool isFire;		  //
 	int count;			  //
+	float damage;
 
 	void Move()
 	{
@@ -44,11 +45,11 @@ private:
 	vector<Bullet*> bulletList;
 	COLORREF bc;
 public:
-	void Init(int size, COLORREF bcc);
+	void Init(int size, COLORREF bcc, float damage);
 	void Update();
 	void Render(HDC hdc);
 
-	void Fire(POINT pos, float angle, float speed);
+	void Fire(POINT pos, float angle, float speed, float damage);
 
 	bool IsCollision(RECT rc);
 

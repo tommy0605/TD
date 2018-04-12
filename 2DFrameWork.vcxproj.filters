@@ -189,9 +189,6 @@
     <ClInclude Include="Powerup.h">
       <Filter>MainGame\Powerup</Filter>
     </ClInclude>
-    <ClInclude Include="Unit.h">
-      <Filter>MainGame\Unit</Filter>
-    </ClInclude>
     <ClInclude Include="ProgressBar.h">
       <Filter>2DFrameWork\ProgressBar</Filter>
     </ClInclude>
@@ -215,6 +212,9 @@
     </ClInclude>
     <ClInclude Include="Base.h">
       <Filter>MainGame\Building\Tower\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>MainGame\Unit\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -294,6 +294,12 @@
       <Filter>MainGame\MapTool</Filter>
     </ClCompile>
     <ClCompile Include="BuildingManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

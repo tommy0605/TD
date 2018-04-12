@@ -8,7 +8,9 @@ class GameScene : public GameNode
 private:
 	MapTool * map;
 	BuildingManager* bm;
+	EnemyManager* em;
 	RECT mouseRC;
+	RECT endRect;
 	Tower* curTower;
 	Tower ccTower;
 	POINT endPos;
