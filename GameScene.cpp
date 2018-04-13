@@ -13,6 +13,9 @@ void GameScene::Init()
 	map->SetTile();
 	map->LoadMap();
 	map->SetSE();
+	map->SetIsStart(true);
+	em = new EnemyManager;
+	em->Init(map);
 	isPause = true;
 }
 
@@ -29,6 +32,17 @@ void GameScene::Update()
 	for (int i = 0; i < bm->GetUsingTowerList().size(); i++)
 	{
 		map->SetTowerClosedMap(bm->GetUsingTowerList()[i]->rc);
+	}
+	if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
+	{
+		map->SetIsStart(true);
+	}
+	if(map->GetIsStart())
+		map->PathFinder();
+
+	if (map->GetIsStart() == false)
+	{
+		em->Update();
 	}
 }
 
@@ -68,6 +82,7 @@ void GameScene::Render(HDC hdc)
 		endRect.bottom = endPos.y + 45;
 		IMAGEMANAGER->FindImage("base")->RenderSize(hdc, endPos.x, endPos.y, 2, 0, 45,45);
 	}
+	em->Render(hdc);
 }
 
 void GameScene::Release()

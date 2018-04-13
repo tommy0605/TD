@@ -23,6 +23,7 @@ private:
 	POINT nextPos;
 	bool isAlive;
 	bool isGamed;
+	int position;
 	
 public:
 	void Init(int num);
@@ -32,10 +33,13 @@ public:
 	void DOA(HDC hdc);
 	
 	void Upgrade(float dif);
+	inline void SetPos(POINT pos) { this->pos = pos; }
 	inline POINT GetPos() { return pos; }
 	inline void SetNextPos(POINT poss) { nextPos = poss; }
 	inline bool GetIsAlive() { return isAlive; }
 	inline void SetAlive(bool isAliv) { isAlive = isAliv; }
 	inline bool GetIsGamed() { return isGamed; }
-	inline void SetGamed(bool gamed) { isAlive = gamed; }
+	inline void SetGamed(bool gamed) { isGamed = gamed; }
+	inline int GetCurPos() { return position; }
+	inline void SetCurPos(int s) { position = s; }
 };

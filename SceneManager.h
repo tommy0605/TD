@@ -18,4 +18,5 @@ public:
 	GameNode* AddScene(string sceneName, GameNode* scene);
 
 	void ChangeScene(string sceneName);
+
 };

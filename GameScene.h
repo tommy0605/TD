@@ -9,6 +9,7 @@ private:
 	MapTool * map;
 	BuildingManager* bm;
 	EnemyManager* em;
+	float dif;
 	RECT mouseRC;
 	RECT endRect;
 	Tower* curTower;

@@ -39,6 +39,7 @@ public:
 	RECT GetMouseRect();
 	void SetTowerClosedMap(RECT rc);
 
+
 	RECT GetEndTileRect() {
 		if (endTile == NULL)
 			return RECT{};
@@ -49,4 +50,7 @@ public:
 			return RECT{};
 		return startTile->rc;
 	}
+	bool GetIsStart() { return isStart; }
+	void SetIsStart(bool start) { isStart = start; }
+	vector<Tile*> GetCloseList() { return closeList; }
 };

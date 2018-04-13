@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#define ENSPEED 10.0f
+#define ENSPEED 3.0f
 #define ENHEALTH 600.0f
 
 void Enemy::Init(int num)
@@ -9,41 +9,41 @@ void Enemy::Init(int num)
 	case 0:
 		type = SPEED;
 		speed = ENSPEED;
-		hp = ENHEALTH /3;
+		hp = ENHEALTH /2;
 		frameX = 6;
 		frameY = 0;
 		break;
 	case 1:
 		type = HEALTH;
-		speed = (ENSPEED / 3);
+		speed = (ENSPEED / 2);
 		hp = ENHEALTH;
 		frameX = 6;
 		frameY = 1;
 		break;
 	case 2:
 		type = BALANCE;
-		speed = (ENSPEED / 3)*2;
+		speed = (ENSPEED / 4)*3;
 		hp = ENHEALTH/ 2;
 		frameX = 6;
 		frameY = 2;
 		break;
 	case 3:
 		type = BONUS;
-		speed = ENSPEED;
+		speed = ENSPEED/2;
 		hp = ENHEALTH /5;
 		frameX = 6;
 		frameY = 3;
 		break;
 	case 4:
 		type = HEALTH2;
-		speed = (ENSPEED / 3);
+		speed = (ENSPEED / 2);
 		hp = ENHEALTH*2;
 		frameX = 1;
 		frameY = 4;
 		break;
 	case 5:
 		type = BALANCE2;
-		speed = (ENSPEED / 3) * 2;
+		speed = (ENSPEED / 4) * 3;
 		hp = (ENHEALTH/2)*3;
 		frameX = 3;
 		frameY = 4;
@@ -53,6 +53,7 @@ void Enemy::Init(int num)
 	}
 	image = IMAGEMANAGER->FindImage("enemy");
 	isGamed = false;
+	position = 0;
 }
 
 void Enemy::Update()

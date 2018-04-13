@@ -9,6 +9,7 @@ EnemyManager::EnemyManager()
 void EnemyManager::Init(MapTool * map)
 {
 	mapt = map;
+	closeList = mapt->GetCloseList();
 	int randNum;
 	for (int i = 0; i < dif * 100; i++)
 	{
@@ -26,6 +27,9 @@ void EnemyManager::Init(MapTool * map)
 			enemy->Init(4);
 		if (randNum <= dif/2 && randNum > 0)
 			enemy->Init(5);
+		enemy->SetPos(GetRectCenterPos(map->GetStartTileRect()));
+		//enemy->SetNextPos(closeList[1]->center);
+		enemyList.push_back(enemy);
 	}
 }
 
@@ -46,26 +50,47 @@ void EnemyManager::Render(HDC hdc)
 
 void EnemyManager::Update()
 {
+	closeList = mapt->GetCloseList();
 	for (int i = 0; i < enemyList.size(); i++)
 	{
 		count++;
-		if (!enemyList[i]->GetIsGamed())
+		if (enemyList[i]->GetIsGamed() == false)
 		{
-			if (count > 3)
+			enemyList[i]->SetAlive(true);
+			enemyList[i]->SetGamed(true);
+			if (count > 2)
 			{
-				count -= 3;
-				enemyList[i]->SetAlive(true);
-				enemyList[i]->SetGamed(true);
+				count = 0;
+				return;
+			}
+		}
+		else
+		{
+			enemyList[i]->Move();
+			Move();
+		}
+	}
+}
+
+void EnemyManager::Move()
+{	
+	for (int i = 0; i < enemyList.size(); i++)
+	{
+		if (enemyList[i]->GetIsAlive())
+		{
+			if (enemyList[i]->GetCurPos() >= closeList.size() - 1)
+			{
+				
+			}
+			else
+			{
+				enemyList[i]->SetNextPos(closeList[enemyList[i]->GetCurPos() + 1]->center);
+				if (((enemyList[i]->GetPos().x >= closeList[enemyList[i]->GetCurPos() + 1]->center.x-5) && (enemyList[i]->GetPos().x <= closeList[enemyList[i]->GetCurPos() + 1]->center.x +5)) && ((enemyList[i]->GetPos().y >= closeList[enemyList[i]->GetCurPos() + 1]->center.y - 5) && (enemyList[i]->GetPos().y <= closeList[enemyList[i]->GetCurPos() + 1]->center.y + 5)))
+				{
+					enemyList[i]->SetCurPos(enemyList[i]->GetCurPos() + 1);
+				}
 			}
 		}
 	}
-
-}
-
-void EnemyManager::Move(Enemy * enemy)
-{
-	if (enemy->GetIsAlive())
-	{
-		
-	}
+	
 }

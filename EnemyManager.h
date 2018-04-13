@@ -5,6 +5,7 @@ class EnemyManager
 private:
 	vector<Enemy*> enemyList;
 	MapTool * mapt;
+	vector<Tile*> closeList;
 	int count;
 public:
 	EnemyManager();
@@ -13,6 +14,6 @@ public:
 	void Render(HDC hdc);
 	void Update();
 
-	void Move(Enemy* enemy);
+	void Move();
 
 };
