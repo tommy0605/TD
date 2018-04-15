@@ -58,7 +58,7 @@ void EnemyManager::Update()
 		{
 			enemyList[i]->SetAlive(true);
 			enemyList[i]->SetGamed(true);
-			if (count > 2)
+			if (count > 10)
 			{
 				count = 0;
 				return;

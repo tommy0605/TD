@@ -26,14 +26,14 @@ void BulletManager::Update()
 
 void BulletManager::Render(HDC hdc)
 {
-	HBRUSH hOldBrush;
-	hOldBrush = (HBRUSH)SelectObject(hdc, CreateSolidBrush(bc));
+	//HBRUSH hOldBrush;
+	//hOldBrush = (HBRUSH)SelectObject(hdc, CreateSolidBrush(bc));
 	for (Bullet *b : bulletList)
 	{
 		b->Render(hdc);
 	}
-	SelectObject(hdc, hOldBrush);
-	DeleteObject(hOldBrush);
+	//SelectObject(hdc, hOldBrush);
+	//DeleteObject(hOldBrush);
 }
 
 void BulletManager::Fire(POINT pos, float angle, float speed, float damage)

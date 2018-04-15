@@ -32,6 +32,11 @@ void Tower::Render(HDC hdc, int posx, int posy)
 	image->Render(hdc, posx, posy, fX, fY);
 }
 
+void Tower::Update(HDC hdc)
+{
+	bm->Render(hdc);
+}
+
 void Tower::DisRender(HDC hdc, int posx, int posy)
 {
 	image->Render(hdc, posx, posy, dFX, dFY);
@@ -58,6 +63,15 @@ void Tower::Attack(float angle)
 	{
 		bm->Fire(pos, angle, bulletSpeed, damage);
 		count = 0;
+	}
+	//bm->Fire(pos, angle, bulletSpeed, damage);
+}
+
+void Tower::CheckEnemy(POINT pos)
+{
+	if (IsPointInCircle(pos, range, this->pos))
+	{
+		Attack(GetAngle(this->pos, pos));
 	}
 }
 

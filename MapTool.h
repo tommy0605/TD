@@ -37,8 +37,8 @@ public:
 	void PathFinder();
 	void SetWall();
 	RECT GetMouseRect();
+	bool CheckTowerClosedMap(RECT rc);
 	void SetTowerClosedMap(RECT rc);
-
 
 	RECT GetEndTileRect() {
 		if (endTile == NULL)

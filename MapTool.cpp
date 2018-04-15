@@ -332,6 +332,20 @@ RECT MapTool::GetMouseRect()
 	return RECT{9999,9999,9999,9999};
 }
 
+bool MapTool::CheckTowerClosedMap(RECT rc)
+{
+	RECT rcT;
+	for (int i = 0; i < totalList.size(); i++)
+	{
+		if (IntersectRect(&rcT, &totalList[i]->rc, &rc))
+		{
+			if (totalList[i]->attribute == WALL)
+				return false;
+		}
+	}
+}
+
+
 void MapTool::SetTowerClosedMap(RECT rc)
 {
 	RECT rcT;

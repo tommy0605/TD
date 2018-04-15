@@ -17,7 +17,7 @@ public:
 	Tower* FindTower(string key);
 	Tower* SetCurrTower();
 	void SetTowerOnMap(Tower curTower, int posx, int posy);
-	void Attack();
+	void Attack(POINT pos);
 	void UpgradeRange(float upg);
 	void UpgradeDamage(float upg);
 	void UpgradeFireRate(float upg);

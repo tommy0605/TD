@@ -15,5 +15,5 @@ public:
 	void Update();
 
 	void Move();
-
+	inline vector<Enemy*> GetEnemyLsit() { return enemyList; }
 };

@@ -87,7 +87,9 @@ void BuildingManager::Render(HDC hdc)
 	for (int i = 0; i < usingTower.size(); i++)
 	{
 		usingTower[i]->GameRender(hdc, usingTower[i]->pos.x, usingTower[i]->pos.y);
+		usingTower[i]->Update(hdc);
 	}
+
 }
 
 Tower* BuildingManager::FindTower(string key)
@@ -127,6 +129,14 @@ void BuildingManager::SetTowerOnMap(Tower curTower, int posx, int posy)
 	tower->pos.x = posx;
 	tower->pos.y = posy;
 	usingTower.push_back(tower);
+}
+
+void BuildingManager::Attack(POINT pos)
+{
+	for (int i = 0; i < usingTower.size(); i++)
+	{
+		usingTower[i]->CheckEnemy(pos);
+	}
 }
 
 void BuildingManager::UpgradeRange(float upg)

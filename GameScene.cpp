@@ -29,20 +29,24 @@ void GameScene::Update()
 			ccTower = *curTower;
 		}
 	}
-	for (int i = 0; i < bm->GetUsingTowerList().size(); i++)
-	{
-		map->SetTowerClosedMap(bm->GetUsingTowerList()[i]->rc);
-	}
 	if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
 	{
 		map->SetIsStart(true);
 	}
 	if(map->GetIsStart())
 		map->PathFinder();
+	for (int i = 0; i < bm->GetUsingTowerList().size(); i++)
+	{
+		map->SetTowerClosedMap(bm->GetUsingTowerList()[i]->rc);
+	}
 
 	if (map->GetIsStart() == false)
 	{
 		em->Update();
+	}
+	for (int i = 0; i < em->GetEnemyLsit().size(); i++)
+	{
+		bm->Attack(em->GetEnemyLsit()[i]->GetPos());
 	}
 }
 
@@ -60,10 +64,11 @@ void GameScene::Render(HDC hdc)
 
 	bm->Render(hdc);
 
+
 	if (ccTower.image != NULL)
 	{
 		//ccTower.image->RenderSize(hdc, mousePos.x, mousePos.y, ccTower.fX, ccTower.fY, 28, 28);
-		if (mousePos.x < TWINWIDTH - 15 && mousePos.x > 15 && mousePos.y < TWINWIDTH - 15 && mousePos.y > 15)
+		if (mousePos.x < TWINWIDTH - 15 && mousePos.x > 15 && mousePos.y < TWINWIDTH - 15 && mousePos.y > 15 && map->CheckTowerClosedMap(RectMake(map->GetMouseRect().left, map->GetMouseRect().top, 25,25)))
 		{
 			ccTower.image->RenderSize(hdc, map->GetMouseRect().left+1, map->GetMouseRect().top+1, ccTower.fX, ccTower.fY, 25, 25);
 			if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
