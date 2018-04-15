@@ -7,7 +7,7 @@ struct Bullet
 	float speed;			//ÃÑ¾Ë ¼Óµµ ±Ã±ØÀÇ ¼Óµµ
 	int size;
 	bool isFire;		  //
-	int count;			  //
+	//int count;			  //
 	float damage;
 
 	void Move()
@@ -44,9 +44,10 @@ class BulletManager
 private:
 	vector<Bullet*> bulletList;
 	COLORREF bc;
+	POINT pos;
 public:
 	void Init(int size, COLORREF bcc, float damage);
-	void Update();
+	void Update(float range);
 	void Render(HDC hdc);
 
 	void Fire(POINT pos, float angle, float speed, float damage);

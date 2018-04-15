@@ -13,6 +13,7 @@ public:
 	void Init();
 	void Update();
 	void Render(HDC hdc);
+	void UsingTowerRender(HDC hdc);
 
 	Tower* FindTower(string key);
 	Tower* SetCurrTower();

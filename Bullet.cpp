@@ -15,25 +15,28 @@ void BulletManager::Init(int size, COLORREF bcc, float damage)
 	bc = bcc;
 }
 
-void BulletManager::Update()
+void BulletManager::Update(float range)
 {
 	for (Bullet* b : bulletList)
 	{
 		b->Move();
-		if (b->rc.left < 0) b->isFire = false;
+		if (GetDistance(pos, POINT{ b->rc.left, b->rc.top }) > range)
+		{
+			b->isFire = false;
+		}
 	}
 }
 
 void BulletManager::Render(HDC hdc)
 {
-	//HBRUSH hOldBrush;
-	//hOldBrush = (HBRUSH)SelectObject(hdc, CreateSolidBrush(bc));
+	HBRUSH hOldBrush;
+	hOldBrush = (HBRUSH)SelectObject(hdc, CreateSolidBrush(bc));
 	for (Bullet *b : bulletList)
 	{
 		b->Render(hdc);
 	}
-	//SelectObject(hdc, hOldBrush);
-	//DeleteObject(hOldBrush);
+	SelectObject(hdc, hOldBrush);
+	DeleteObject(hOldBrush);
 }
 
 void BulletManager::Fire(POINT pos, float angle, float speed, float damage)
@@ -58,6 +61,7 @@ void BulletManager::Fire(POINT pos, float angle, float speed, float damage)
 	bullet->damage = damage;
 	bullet->rc.left = pos.x;
 	bullet->rc.top = pos.y;
+	this->pos = pos;
 	bullet->angle = angle;
 	bullet->speed = speed;
 	bulletList.push_back(bullet);

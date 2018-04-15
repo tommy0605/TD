@@ -44,10 +44,8 @@ void GameScene::Update()
 	{
 		em->Update();
 	}
-	for (int i = 0; i < em->GetEnemyLsit().size(); i++)
-	{
-		bm->Attack(em->GetEnemyLsit()[i]->GetPos());
-	}
+
+	bm->Update();
 }
 
 void GameScene::Render(HDC hdc)
@@ -63,7 +61,6 @@ void GameScene::Render(HDC hdc)
 	map->TotalRender(hdc);
 
 	bm->Render(hdc);
-
 
 	if (ccTower.image != NULL)
 	{
@@ -88,11 +85,25 @@ void GameScene::Render(HDC hdc)
 		IMAGEMANAGER->FindImage("base")->RenderSize(hdc, endPos.x, endPos.y, 2, 0, 45,45);
 	}
 	em->Render(hdc);
+	bm->UsingTowerRender(hdc);
 }
 
 void GameScene::Release()
 {
 
+}
+
+POINT GameScene::AttackLock(POINT pos, int radius)
+{
+	for (int i = 0; i < em->GetEnemyLsit().size(); i++)
+	{
+		if (IsPointInCircle(pos, radius, em->GetEnemyLsit()[i]->GetPos()))
+		{
+			return  em->GetEnemyLsit()[i]->GetPos();
+		}
+
+	}
+	return POINT{ 99999,99999 };
 }
 
 

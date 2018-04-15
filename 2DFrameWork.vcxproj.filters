@@ -294,13 +294,13 @@
       <Filter>MainGame\MapTool</Filter>
     </ClCompile>
     <ClCompile Include="BuildingManager.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>MainGame\Building</Filter>
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>MainGame\Unit\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="EnemyManager.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>MainGame\Unit\Managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

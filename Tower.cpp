@@ -22,7 +22,7 @@ void Tower::Init(string name, float hp, BUILDNAME bname, int frameX, int frameY,
 	count = 0;
 	range = rangee;
 	this->damage = damage;
-	bm->Init(bulletSize, bcc, damage);
+	bm->Init(30, bcc, damage);
 	bulletSpeed = bulSpeed;
 	image = IMAGEMANAGER->FindImage("td");
 }
@@ -32,7 +32,12 @@ void Tower::Render(HDC hdc, int posx, int posy)
 	image->Render(hdc, posx, posy, fX, fY);
 }
 
-void Tower::Update(HDC hdc)
+void Tower::Update()
+{
+	bm->Update(range);
+}
+
+void Tower::BulletRender(HDC hdc)
 {
 	bm->Render(hdc);
 }
@@ -67,11 +72,13 @@ void Tower::Attack(float angle)
 	//bm->Fire(pos, angle, bulletSpeed, damage);
 }
 
-void Tower::CheckEnemy(POINT pos)
+bool Tower::CheckEnemy(POINT pos)
 {
 	if (IsPointInCircle(pos, range, this->pos))
 	{
 		Attack(GetAngle(this->pos, pos));
+		return true;
 	}
+	return false;
 }
 

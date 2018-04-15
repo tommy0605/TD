@@ -24,7 +24,7 @@ public:
 	virtual void Render(HDC hdc);
 	virtual void Release();
 	
-	void SetCurrTower();
+	POINT AttackLock(POINT pos, int radius);
 
 	void SetMap(MapTool* maap) { map = maap; }
 };
